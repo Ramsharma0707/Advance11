@@ -1,17 +1,21 @@
 package in.co.rays.marksheet;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Iterator;
 import java.util.List;
 
 public class TestMarksheet {
 	public static void main(String[] args) throws Exception {
 	
-		//testAdd();
+		testAdd();
 		//testUpdate();
 		//testDelete();
 		//testreadAll();
 		//testFindByPk();
-		testSearch();
+		//testSearch();
 	}
 
 
@@ -21,10 +25,10 @@ public class TestMarksheet {
 		
 		bean.setId(19);
 		bean.setRollNo(119);
-		bean.setName("rakesh");
+		bean.setName("kesh");
 		bean.setPhysics(74);
-		bean.setChemistry(56);
-		bean.setMaths(65);
+		bean.setChemistry(74);
+		bean.setMaths(74);
 		
 		MarksheetModel model= new MarksheetModel();
 		model.add(bean);
@@ -79,9 +83,9 @@ public class TestMarksheet {
 		
 	private static void testSearch() throws Exception{
 		MarksheetBean bean=new MarksheetBean();
-		//bean.setName("a");
+		bean.setName("a");
 		
-		//bean.setRollNo(112);
+		bean.setRollNo(112);
 		MarksheetModel model=new MarksheetModel();
 		
 		List list=model.search(bean,0,5);
@@ -102,5 +106,5 @@ public class TestMarksheet {
 		
 		
 	}
-
+	
 }
