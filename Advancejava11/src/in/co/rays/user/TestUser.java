@@ -6,10 +6,10 @@ import java.util.List;
 
 public class TestUser {
 	public static void main(String[] args) throws Exception {
-		testAdd();
+		//testAdd();
 		// testUpdate();
 		// testDelete();
-		// testSearch();
+		testSearch();
 		// testFindByPk();
 		// testAuthenticate();
 
@@ -20,7 +20,7 @@ public class TestUser {
 		UserBean bean = new UserBean();
 		UserModel model = new UserModel();
 	
-		bean.setId(14);
+		bean.setId(20);
 		bean.setFirst_name("shichen");
 		bean.setLast_name("star");
 		bean.setLogin_id("shinchen@gmail.com");
@@ -62,12 +62,12 @@ public class TestUser {
 		
 		UserBean bean = new UserBean();
 		
-		bean.setFirst_name("s");
-		bean.setDob(sdf.parse("12/01/2024"));
-		
+		//bean.setFirst_name("s");
+		//bean.setDob(sdf.parse("12/01/2024"));
+	
 		UserModel model = new UserModel();
 
-		List list = model.search(bean);
+		List list = model.search(bean,1,5);
 
 		Iterator it = list.iterator();
 		while (it.hasNext()) {

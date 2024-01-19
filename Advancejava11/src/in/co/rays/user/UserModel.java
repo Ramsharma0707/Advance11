@@ -58,19 +58,24 @@ public class UserModel {
 		System.out.println("data deleted=" + i);
 	}
 
-	public List search(UserBean bean) throws Exception {
+	public List search(UserBean bean,int pageNo,int pageSize) throws Exception {
 		Connection conn = JDBCDataSource.getConnection();
 
 		StringBuffer sql = new StringBuffer("select * from user where 1 = 1");
 
 		if (bean != null) {
-			if (bean.getFirst_name() != null && bean.getFirst_name().length() > 0);
+			if (bean.getFirst_name() != null && bean.getFirst_name().length() > 0) {
 			
 			sql.append(" and first_name like '" + bean.getFirst_name() + "%'");
 		}
 		if (bean.getDob() != null && bean.getDob().getTime() > 0) {
 			
 			sql.append(" and dob like '" + new java.sql.Date(bean.getDob().getTime()) + " %'");
+		}
+	}
+		if (pageSize > 0) {
+			pageNo = (pageNo - 1) * pageSize;
+			sql.append(" limit " + pageNo + ", " + pageSize);
 		}
 
 		System.out.println("sql.........." + sql);
@@ -108,6 +113,8 @@ public class UserModel {
 
 		while (rs.next()) {
 			bean = new UserBean();
+		
+			
 			bean.setId(rs.getInt(1));
 			bean.setFirst_name(rs.getString(2));
 			bean.setLast_name(rs.getString(3));
@@ -124,9 +131,11 @@ public class UserModel {
 		Connection conn = JDBCDataSource.getConnection();
 
 		PreparedStatement ps = conn.prepareStatement("select * from user where login_id=? and password=?");
+		
 		ps.setString(1, login_id);
 		ps.setString(2, password);
 		ResultSet rs = ps.executeQuery();
+		
 		UserBean bean = null;
 
 		while (rs.next()) {

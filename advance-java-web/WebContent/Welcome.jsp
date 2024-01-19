@@ -15,13 +15,13 @@
 		String dob = request.getParameter("dob");
 		String address = request.getParameter("address");
 	%>
-	<%=fname%>
-	<%=lname%>
-	<%=login%>
-	<%=password%>
-	<%=dob%>
-	<%=address%>
-
-
+	
+	<%=fname %>
+	<br>
+	<%=lname %>
+	<%=login %>
+	<%=password %>
+	<%=dob %>
+	<%=address %>
 </body>
 </html>

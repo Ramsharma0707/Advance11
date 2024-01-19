@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<form action="RequestInfo" method="get"></form>
 	<h1> My  First Jsp</h1>
 </body>
 </html>
