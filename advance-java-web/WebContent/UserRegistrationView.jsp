@@ -5,20 +5,27 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-</head>
-<body>
-	<form action="FirstServlet" method="get">
+<style type="text/css">
+</style>
 
-		<table>
+</head>
+
+<body>
+	<form action="UserRegistrationCtl" method="post">
+
+
+		<table align="center">
+			<h1 align="center">User Registration</h1>
+
 
 			<tr>
-				<th>FirstName</th>
-				<td><input type="text" name=firstName></td>
+				<th>FirstName:</th>
+				<td><input type="text" name=firstName placeholder=" "></td>
 
 			</tr>
 
 			<tr>
-				<th>LastName</th>
+				<th>LastName:</th>
 				<td><input type="text" name=lastName></td>
 
 			</tr>
@@ -33,13 +40,13 @@
 
 			</tr>
 			<tr>
-				<th>Address</th>
-				<td><input type="text" name=address></td>
+				<th>Dob</th>
+				<td><input type="date" name=dob></td>
 
 			</tr>
 			<tr>
-				<th>Dob</th>
-				<td><input type="Date" name=dob></td>
+				<th>Address</th>
+				<td><input type="text" name=address></td>
 
 			</tr>
 			<tr>
