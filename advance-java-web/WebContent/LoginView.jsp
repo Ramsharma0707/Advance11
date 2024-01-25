@@ -11,13 +11,6 @@
 	<%@include file="Header.jsp"%>
 	
 	
-	
-<!-- 	<h3>Hi, Guest</h3>
-	
-	<hr> -->
-
-	
-	
 	<form action="LoginCtl" method="post">
 	
 		<%

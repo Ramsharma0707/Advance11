@@ -11,20 +11,6 @@
 	
 	 <%@include file="Header.jsp" %> 
 	
-<%-- 	<%
-		UserBean user = (UserBean) request.getAttribute("user");
-	%>
-	<%
-		if (user != null) {
-	%>
-	<h3>
-		Hi,
-		<%=user.getFirst_name()%>
-	</h3>
-	<%} %>
-	<hr> --%>
-	
-	
 	<h3 align="center"> Welcome to Dynamic Web Project</h3>
 	
 	
