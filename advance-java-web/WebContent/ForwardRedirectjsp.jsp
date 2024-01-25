@@ -9,7 +9,7 @@
 <body>
 
 
-<form action="FirstServlet" method="get">
+<form action="FirstServlet" method="post">
 	<table>
 			<tr>
 				<th>First name</th>

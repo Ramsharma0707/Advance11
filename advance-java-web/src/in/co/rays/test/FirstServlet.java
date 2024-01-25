@@ -21,8 +21,8 @@ public class FirstServlet extends HttpServlet{
 		
 		//resp.sendRedirect("SecondServlet");
 		
-		RequestDispatcher rd = req.getRequestDispatcher("SecondServlet");
-		rd.forward(req, resp);
+		//RequestDispatcher rd = req.getRequestDispatcher("SecondServlet");
+		//rd.forward(req, resp);
 		
 	}
 	
@@ -46,8 +46,8 @@ public class FirstServlet extends HttpServlet{
 	//	System.out.println(address);
 		
 	//	resp.sendRedirect("SecondServlet");
-	//	RequestDispatcher rd=req.getRequestDispatcher("SecondServlet");
-	//	rd.forward(req, resp);
+		RequestDispatcher rd=req.getRequestDispatcher("SecondServlet");
+		rd.forward(req, resp);
 		
 		System.out.println("jai shree RAM");
 	}

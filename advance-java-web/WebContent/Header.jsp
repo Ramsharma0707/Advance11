@@ -8,10 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	 <%@include file="Header.jsp" %> 
-	
-<%-- 	<%
+
+
+	<%
 		UserBean user = (UserBean) request.getAttribute("user");
 	%>
 	<%
@@ -21,14 +20,16 @@
 		Hi,
 		<%=user.getFirst_name()%>
 	</h3>
-	<%} %>
-	<hr> --%>
-	
-	
-	<h3 align="center"> Welcome to Dynamic Web Project</h3>
-	
-	
-	
+
+	<%
+		} else {
+	%>
+	<h3>Hi, Guest</h3>
+	<%
+		}
+	%>
+	<hr>
+
+
 </body>
 </html>
-<%@include file="Footer.jsp"%>
