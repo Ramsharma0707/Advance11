@@ -8,35 +8,31 @@
 </head>
 <body>
 
-	<%@include file="Header.jsp"%>
-	
-	
+	<%@include file="Header.jsp" %>
 	<form action="LoginCtl" method="post">
 	
-		<%
-			String msg = (String) request.getAttribute("msg");
-		%>
+	<%
+		String msg = (String) request.getAttribute("msg");
+	%>
 
-		<%
-			if (msg != null) {
-		%>
-
-		<%=msg%>
-
-		<%
-			}
-		%>
+	<%
+		if (msg != null) {
+	%>
+	<%=msg %>
 
 
+	<%
+		}
+	%>
 		<table>
 			<tr>
-				<th>Login Id</th>
-				<td><input type="text" name=loginId></td>
+				<th>LoginID :</th>
+				<td><input type="text" name="loginId"></td>
 
 			</tr>
 			<tr>
-				<th>Password</th>
-				<td><input type="text" name=password></td>
+				<th>Password :</th>
+				<td><input type="text" name="password"></td>
 
 			</tr>
 			<tr>
@@ -45,18 +41,8 @@
 
 			</tr>
 
-
 		</table>
 
-
-
-
-		</footer>
-
 	</form>
-
 </body>
-
 </html>
-
-<%@include file="Footer.jsp"%>

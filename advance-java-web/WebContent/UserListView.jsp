@@ -10,53 +10,107 @@
 </head>
 <body>
 
-	<%
-		List list = (List) request.getAttribute("list");
-		Iterator it = list.iterator();
-	%>
+
+	<%@include file="Header.jsp"%>
+	<form action="UserListCtl.do" method="post">
+
+		<tr>
+			<td><input type="text" name="firstName"></td>
+
+			<td><input type="date" name="dob"></td>
+
+			<td><input type="submit" name="operation" value="search">
+			
+			<td><input type="submit" name="operation" value="delete"> 
+			</td>
+		</tr>
+
+		<br>
 
 
-	<%@ include file="Header.jsp"%>
-	<form action="">
+
+		<%
+			List list = (List) request.getAttribute("List");
+			
+		    int pageNo = (int) request.getAttribute("pageNo");
+		
+		    int index = ((pageNo - 1) * 5) + 1; 
+			
+		
+
+			List nextList = (List) request.getAttribute("nextList");//
+
+			Iterator it = list.iterator();
+		%>
+
+
+
+
+
+
 		<table border="1">
-
 			<tr>
-				<th>Id</th>
+				<th>Select</th>
+				<th>S.No</th>
 				<th>FirstName</th>
 				<th>LastName</th>
 				<th>LoginId</th>
 				<th>Password</th>
 				<th>Dob</th>
 				<th>Address</th>
+				<th>Edit</th>
+
 
 			</tr>
 			<%
 				while (it.hasNext()) {
 					UserBean bean = (UserBean) it.next();
 			%>
-			
+
 			<tr>
-			<td><%=bean.getId() %>  </td>
-			<td><%=bean.getFirst_name() %>  </td>
-			<td><%=bean.getLast_name() %>  </td>
-			<td><%=bean.getLogin_id() %>  </td>
-			<td><%=bean.getPassword() %>  </td>
-			<td><%=bean.getDob() %>  </td>
-			<td><%=bean.getAddress() %>  </td>
-			
-			<%
-				}
-			%>
+				<td><input type="checkbox" name="ids" value=<%=bean.getId() %>></td>
+
+				<td><%=index++ %></td>				
+				
+				<td><%=bean.getFirst_name()%></td>
+				<td><%=bean.getLast_name()%></td>
+				<td><%=bean.getLogin_id()%></td>
+				<td><%=bean.getPassword()%></td>
+				<td><%=bean.getDob()%></td>
+				<td><%=bean.getAddress()%></td>
+
+				<td><a href="UserCtl?id=<%=bean.getId()%>">edit</a></td>
+
+
+				<%
+					}
+				%>
+
 			</tr>
-			
-			</table>
+
+		</table>
+
+		<table>
+			<tr>
+
+
+				<td><input type="submit" name="operation" value="previous"
+					<%=(pageNo != 1) ? "" : "disabled"%>></td>
+
+
+				<td><input type="submit" name="operation" value="next"
+					<%=(nextList.size() != 0) ? "" : "disabled"%>></td>
 
 
 
+			</tr>
+
+
+		</table>
+		<input type="hidden" name="pageNo" value=<%=pageNo%>>
 
 
 	</form>
-
 
 
 </body>

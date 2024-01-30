@@ -8,13 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	 <%@include file="Header.jsp" %> 
-	
-	<h3 align="center"> Welcome to Dynamic Web Project</h3>
-	
-	
-	
+
+	<%@include file="Header.jsp" %>
+
+	<h3 align="center">Welcome to Dynamic-Web-Project</h3>
 </body>
 </html>
-<%@include file="Footer.jsp"%>

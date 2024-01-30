@@ -12,7 +12,7 @@
 
 <body>
 
-	<%@include file="Header.jsp" %>
+	 <%@include file="Header.jsp" %> 
 	<form action="UserRegistrationCtl" method="post">
 
 
