@@ -12,7 +12,7 @@
 
 
 	<%@include file="Header.jsp"%>
-	<form action="UserListCtl.do" method="post">
+	<form action="UserListCtl.do" method="post">				
 
 		<tr>
 			<td><input type="text" name="firstName"></td>
@@ -22,6 +22,7 @@
 			<td><input type="submit" name="operation" value="search">
 			
 			<td><input type="submit" name="operation" value="delete"> 
+			
 			</td>
 		</tr>
 

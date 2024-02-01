@@ -13,6 +13,8 @@
 	
 	<%
 		String msg = (String) request.getAttribute("msg");
+	
+	   String uri	= (String)request.getAttribute("uri");//
 	%>
 
 	<%
@@ -42,7 +44,7 @@
 			</tr>
 
 		</table>
-
+		<input type="hidden" name="uri" value="<%=uri %>">
 	</form>
 </body>
 </html>

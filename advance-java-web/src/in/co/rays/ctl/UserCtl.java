@@ -93,7 +93,7 @@ public class UserCtl extends HttpServlet {
 			try {
 				model.update(bean);
 				
-				bean=model.findByPk(bean.getId());//y smjna
+				bean=model.findByPk(bean.getId());
 				
 				req.setAttribute("bean", bean);//??
 		

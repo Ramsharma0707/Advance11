@@ -18,6 +18,7 @@ public class LoginCtl extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		String op=req.getParameter("operation");
 		
 		if(op!=null && op.equals("logout")) {
@@ -32,17 +33,29 @@ public class LoginCtl extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String login = req.getParameter("loginId");
 		String pass = req.getParameter("password");
-
+		
+		String uri	=req.getParameter("uri");//
+		
 		UserModel model = new UserModel();
 		try {
 			UserBean bean = model.authenticate(login, pass);
 			if (bean != null) {
 
 				HttpSession sesssion = req.getSession();
+				
+				
 
 				sesssion.setAttribute("user", bean);
+				
+			//	sesssion.setMaxInactiveInterval(20);
+				
+				if (uri.equalsIgnoreCase("null")) {
+					resp.sendRedirect("Welcome.jsp");
+				} else {
+					resp.sendRedirect(uri);
+				}
 
-				resp.sendRedirect("Welcome.jsp");
+			//	resp.sendRedirect("Welcome.jsp");
 
 			} else {
 				req.setAttribute("msg", "Invalid loginId && password!!!");

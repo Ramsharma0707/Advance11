@@ -14,39 +14,41 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
-
-@WebFilter(filterName="FrontCtl" ,urlPatterns= {"*.do"})
+@WebFilter(filterName = "FrontCtl", urlPatterns = { "*.do" })
 public class FrontCtl implements Filter {
 
 	public void init(FilterConfig filterConfig) throws ServletException {
 
 	}
-	
-    @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-    		throws IOException, ServletException {
-    	
-    	HttpServletRequest req= (HttpServletRequest)request;
-    	HttpServletResponse resp= (HttpServletResponse)  response;
-    	
-    	HttpSession session=req.getSession();
-    	if (session.getAttribute("user")==null) {
-    		request.setAttribute("msg", "Session expired plz login again...");
-    		
-    		RequestDispatcher rd=req.getRequestDispatcher("LoginView.jsp");
-    		rd.forward(req, resp);
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+
+		HttpServletRequest req = (HttpServletRequest) request;
+		HttpServletResponse resp = (HttpServletResponse) response;
+		HttpSession session = req.getSession();
+		
+		String uri=req.getRequestURI();//
+
+		if (session.getAttribute("user") == null) {
 			
+			request.setAttribute("msg", "Session expired plz login again...");
+			
+			req.setAttribute("uri", uri);
+			
+			RequestDispatcher rd = req.getRequestDispatcher("LoginView.jsp");
+			rd.forward(req, resp);
+
+		} else {
+			chain.doFilter(request, response);
 		}
-    	else {
-    		chain.doFilter(request, response);
-    	}
-    	
-    }
-    
-    @Override
-    public void destroy() {
-    	
-    }
-    
+
+	}
+
+	@Override
+	public void destroy() {
+
+	}
+
 }
