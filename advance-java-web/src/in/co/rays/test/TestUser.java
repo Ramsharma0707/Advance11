@@ -24,9 +24,9 @@ public class TestUser {
 		UserModel model = new UserModel();
 	
 		bean.setId(20);
-		bean.setFirst_name("shichen");
-		bean.setLast_name("star");
-		bean.setLogin_id("shinchen@gmail.com");
+		bean.setFirstName("shichen");
+		bean.setLasName("star");
+		bean.setLoginId("shinchen@gmail.com");
 		bean.setPassword("123");
 		bean.setDob(sdf.parse("01/01/1999"));
 		bean.setAddress("banglore");
@@ -42,9 +42,9 @@ public class TestUser {
 		UserModel model = new UserModel();
 		
 		bean.setId(14);
-		bean.setFirst_name("shichen");
-		bean.setLast_name("star");
-		bean.setLogin_id("shinchen@gmail.com");
+		bean.setFirstName("shichen");
+		bean.setLasName("star");
+		bean.setLoginId("shinchen@gmail.com");
 		bean.setPassword("123");
 		bean.setDob(sdf.parse("12/12/2000"));
 		bean.setAddress("banglore");
@@ -77,9 +77,9 @@ public class TestUser {
 			bean = (UserBean) it.next();
 		
 			System.out.print("" + bean.getId());
-			System.out.print("\t" + bean.getFirst_name());
-			System.out.print("\t" + bean.getLast_name());
-			System.out.print("\t" + bean.getLogin_id());
+			System.out.print("\t" + bean.getFirstName());
+			System.out.print("\t" + bean.getLasName());
+			System.out.print("\t" + bean.getLoginId());
 			System.out.print("\t" + bean.getPassword());
 			System.out.print("\t" + bean.getDob());
 			System.out.println("\t" + bean.getAddress());
@@ -92,9 +92,9 @@ public class TestUser {
 		UserBean bean = model.authenticate("sagar@gmail.com", "123");
 		if (bean != null) {
 			System.out.println(bean.getId());
-			System.out.println(bean.getFirst_name());
-			System.out.println(bean.getLast_name());
-			System.out.println(bean.getLogin_id());
+			System.out.println(bean.getFirstName());
+			System.out.println(bean.getLasName());
+			System.out.println(bean.getLoginId());
 			System.out.println(bean.getPassword());
 			System.out.println(bean.getDob());
 			System.out.println(bean.getAddress());
@@ -109,9 +109,9 @@ public class TestUser {
 		UserBean bean = model.findByPk(12);
 		if (bean != null) {
 			System.out.println(bean.getId());
-			System.out.println(bean.getFirst_name());
-			System.out.println(bean.getLast_name());
-			System.out.println(bean.getLogin_id());
+			System.out.println(bean.getFirstName());
+			System.out.println(bean.getLasName());
+			System.out.println(bean.getLoginId());
 			System.out.println(bean.getPassword());
 			System.out.println(bean.getDob());
 			System.out.println(bean.getAddress());

@@ -1,3 +1,5 @@
+<%@ page errorPage="Error.jsp" %>
+
 <%@page import="in.co.rays.bean.UserBean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -16,7 +18,7 @@
 	%>
 	<h3>
 		Hii
-		<%=user.getFirst_name()%>
+		<%=user.getFirstName()%>
 
 	</h3>
 	<a href="UserCtl.do">Add User</a> |
@@ -28,7 +30,8 @@
 	%>
 
 	<h3>Hi Guest</h3>
-
+	
+	<a href="LoginCtl">Login</a>
 	<%
 		}
 	%>
@@ -36,3 +39,4 @@
 	<hr>
 </body>
 </html>
+<%@include file="Footer.jsp" %>

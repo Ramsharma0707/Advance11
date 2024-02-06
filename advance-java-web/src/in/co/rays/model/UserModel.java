@@ -20,9 +20,9 @@ public class UserModel {
 		ps.setInt(1, pk);
 
 		// ps.setInt(1, bean.getId());
-		ps.setString(2, bean.getFirst_name());
-		ps.setString(3, bean.getLast_name());
-		ps.setString(4, bean.getLogin_id());
+		ps.setString(2, bean.getFirstName());
+		ps.setString(3, bean.getLasName());
+		ps.setString(4, bean.getLoginId());
 		ps.setString(5, bean.getPassword());
 		ps.setDate(6, new java.sql.Date(bean.getDob().getTime()));
 		ps.setString(7, bean.getAddress());
@@ -37,9 +37,9 @@ public class UserModel {
 		PreparedStatement ps = conn.prepareStatement(
 				"update user set first_name=?,last_name=?,login_id=?,password=?,dob=?,address=? where id=?");
 
-		ps.setString(1, bean.getFirst_name());
-		ps.setString(2, bean.getLast_name());
-		ps.setString(3, bean.getLogin_id());
+		ps.setString(1, bean.getFirstName());
+		ps.setString(2, bean.getLasName());
+		ps.setString(3, bean.getLoginId());
 		ps.setString(4, bean.getPassword());
 		ps.setDate(5, new java.sql.Date(bean.getDob().getTime()));
 		ps.setString(6, bean.getAddress());
@@ -65,9 +65,9 @@ public class UserModel {
 		StringBuffer sql = new StringBuffer("select * from user where 1 = 1");
 
 		if (bean != null) {
-			if (bean.getFirst_name() != null && bean.getFirst_name().length() > 0) {
+			if (bean.getFirstName() != null && bean.getFirstName().length() > 0) {
 			
-			sql.append(" and first_name like '" + bean.getFirst_name() + "%'");
+			sql.append(" and first_name like '" + bean.getFirstName() + "%'");
 		}
 		if (bean.getDob() != null && bean.getDob().getTime() > 0) {
 			
@@ -89,9 +89,9 @@ public class UserModel {
 		while (rs.next()) {
 			bean = new UserBean();
 			bean.setId(rs.getInt(1));
-			bean.setFirst_name(rs.getString(2));
-			bean.setLast_name(rs.getString(3));
-			bean.setLogin_id(rs.getString(4));
+			bean.setFirstName(rs.getString(2));
+			bean.setLasName(rs.getString(3));
+			bean.setLoginId(rs.getString(4));
 			bean.setPassword(rs.getString(5));
 			bean.setDob(rs.getDate(6));
 			bean.setAddress(rs.getString(7));
@@ -117,9 +117,9 @@ public class UserModel {
 		
 			
 			bean.setId(rs.getInt(1));
-			bean.setFirst_name(rs.getString(2));
-			bean.setLast_name(rs.getString(3));
-			bean.setLogin_id(rs.getString(4));
+			bean.setFirstName(rs.getString(2));
+			bean.setLasName(rs.getString(3));
+			bean.setLoginId(rs.getString(4));
 			bean.setPassword(rs.getString(5));
 			bean.setDob(rs.getDate(6));
 			bean.setAddress(rs.getString(7));
@@ -144,9 +144,9 @@ public class UserModel {
 			bean = new UserBean();
 
 			bean.setId(rs.getInt(1));
-			bean.setFirst_name(rs.getString(2));
-			bean.setLast_name(rs.getString(3));
-			bean.setLogin_id(rs.getString(4));
+			bean.setFirstName(rs.getString(2));
+			bean.setLasName(rs.getString(3));
+			bean.setLoginId(rs.getString(4));
 			bean.setPassword(rs.getString(5));
 			bean.setDob(rs.getDate(6));
 			bean.setAddress(rs.getString(7));

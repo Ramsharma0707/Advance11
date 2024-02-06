@@ -1,3 +1,4 @@
+<%@ page errorPage="Error.jsp"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -11,10 +12,10 @@
 
 	<%
 		UserBean bean = (UserBean) request.getAttribute("bean");
-			
-	   String msg=(String)request.getAttribute("msg");
-	   
-	   List list=(List)request.getAttribute("List");
+
+		String msg = (String) request.getAttribute("msg");
+
+		List list = (List) request.getAttribute("List");
 	%>
 
 	<%@ include file="Header.jsp"%>
@@ -23,29 +24,31 @@
 		<%
 			if (msg != null) {
 		%>
-		<%=msg %>
+		<%=msg%>
 
 		<%
 			}
 		%>
 
 		<table>
-			<input type="Hidden" name="id"
-				value="<%=(bean != null) ? bean.getId() : ""%>">
+			<tr>
+				<td><input type="Hidden" name="id"
+					value="<%=(bean != null) ? bean.getId() : ""%>"></td>
+			</tr>
 			<tr>
 				<th>First Name :</th>
 				<td><input type="text" name="firstName"
-					value="<%=(bean != null) ? bean.getFirst_name() : ""%>"></td>
+					value="<%=(bean != null) ? bean.getFirstName() : ""%>"></td>
 			</tr>
 			<tr>
 				<th>Last Name :</th>
 				<td><input type="text" name="lastName"
-					value="<%=(bean != null) ? bean.getLast_name() : " "%>"></td>
+					value="<%=(bean != null) ? bean.getLasName() : " "%>"></td>
 			</tr>
 			<tr>
 				<th>Login ID :</th>
 				<td><input type="text" name="loginId"
-					value="<%=(bean != null) ? bean.getLogin_id() : ""%>"></td>
+					value="<%=(bean != null) ? bean.getLoginId() : ""%>"></td>
 			</tr>
 			<tr>
 				<th>Password :</th>
@@ -66,9 +69,9 @@
 				<th></th>
 				<td><input type="submit" name="operation"
 					value="<%=(bean != null) ? "update" : "save"%>"></td>
-					
-					
-					
+
+
+
 			</tr>
 		</table>
 	</form>

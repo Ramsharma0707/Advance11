@@ -27,6 +27,7 @@ public class FrontCtl implements Filter {
 
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
+
 		HttpSession session = req.getSession();
 		
 		String uri=req.getRequestURI();//

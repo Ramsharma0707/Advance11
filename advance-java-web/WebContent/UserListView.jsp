@@ -1,3 +1,4 @@
+<%@page errorPage="Error.jsp" %>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -73,14 +74,14 @@
 
 				<td><%=index++ %></td>				
 				
-				<td><%=bean.getFirst_name()%></td>
-				<td><%=bean.getLast_name()%></td>
-				<td><%=bean.getLogin_id()%></td>
+				<td><%=bean.getFirstName()%></td>
+				<td><%=bean.getLasName()%></td>
+				<td><%=bean.getLoginId()%></td>
 				<td><%=bean.getPassword()%></td>
 				<td><%=bean.getDob()%></td>
 				<td><%=bean.getAddress()%></td>
 
-				<td><a href="UserCtl?id=<%=bean.getId()%>">edit</a></td>
+				<td><a href="UserCtl.do?id=<%=bean.getId()%>">edit</a></td>
 
 
 				<%
@@ -108,7 +109,7 @@
 
 
 		</table>
-		<input type="hidden" name="pageNo" value=<%=pageNo%>>
+		<input type="hidden" name="pageNo" value=<%="pageNo"%>>
 
 
 	</form>

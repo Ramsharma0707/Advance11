@@ -5,13 +5,12 @@ import java.util.Date;
 public class UserBean {
 	
 	private int id;
-	private String first_name;
-	private String last_name;
-	private String login_id;
+	private String firstName;
+	private String lasName;
+	private String loginId;
 	private String password;
 	private Date dob;
 	private String address;
-	
 	
 	public int getId() {
 		return id;
@@ -19,23 +18,23 @@ public class UserBean {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getFirst_name() {
-		return first_name;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getLast_name() {
-		return last_name;
+	public String getLasName() {
+		return lasName;
 	}
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setLasName(String lasName) {
+		this.lasName = lasName;
 	}
-	public String getLogin_id() {
-		return login_id;
+	public String getLoginId() {
+		return loginId;
 	}
-	public void setLogin_id(String login_id) {
-		this.login_id = login_id;
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
 	}
 	public String getPassword() {
 		return password;
@@ -57,4 +56,5 @@ public class UserBean {
 	}
 	
 	
+		
 }

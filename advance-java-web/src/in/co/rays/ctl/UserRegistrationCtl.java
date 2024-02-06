@@ -51,9 +51,9 @@ public class UserRegistrationCtl extends HttpServlet {
 
 		UserBean bean = new UserBean();
 
-		bean.setFirst_name(fname);
-		bean.setLast_name(lname);
-		bean.setLogin_id(login);
+		bean.setFirstName(fname);
+		bean.setLasName(lname);
+		bean.setLoginId(login);
 		bean.setPassword(pass);
 		try {
 			bean.setDob(sdf.parse(dob));
@@ -65,9 +65,9 @@ public class UserRegistrationCtl extends HttpServlet {
 		
 		UserModel model = new UserModel();
 
-		System.out.println(bean.getFirst_name());
-		System.out.println(bean.getLast_name());
-		System.out.println(bean.getLogin_id());
+		System.out.println(bean.getFirstName());
+		System.out.println(bean.getLasName());
+		System.out.println(bean.getLoginId());
 		System.out.println(bean.getPassword());
 		System.out.println(bean.getDob());
 		System.out.println(bean.getAddress());

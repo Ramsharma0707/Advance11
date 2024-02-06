@@ -64,9 +64,9 @@ public class UserCtl extends HttpServlet {
 			bean.setId(Integer.parseInt(id));
 		}
 	
-		bean.setFirst_name(fname);
-		bean.setLast_name(lname);
-		bean.setLogin_id(login);
+		bean.setFirstName(fname);
+		bean.setLasName(lname);
+		bean.setLoginId(login);
 		bean.setPassword(pass);
 		try {
 			bean.setDob(sdf.parse(dob));

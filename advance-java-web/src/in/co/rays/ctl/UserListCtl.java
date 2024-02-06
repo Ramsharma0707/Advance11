@@ -83,7 +83,7 @@ public class UserListCtl extends HttpServlet {
 			
 			bean = new UserBean();
 
-			bean.setFirst_name(fname);
+			bean.setFirstName(fname);
 		
 			try {
 				if (dob!=null) {

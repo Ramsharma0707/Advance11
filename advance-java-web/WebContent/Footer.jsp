@@ -1,3 +1,5 @@
+
+<%@ page errorPage="Error.jsp" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -12,7 +14,7 @@
     left:0;
     width:100%; 
     bottom:0;
-    background-color:Orange;
+    background-color:Skyblue;
     color:black;
    text-align:center;
 }

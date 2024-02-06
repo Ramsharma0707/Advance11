@@ -1,6 +1,5 @@
-<%@ page errorPage="Error.jsp" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="RequestInfo" method="get"></form>
-	<h1> My  First Jsp</h1>
+
+<%request.setAttribute("msg2", "B ka page"); %>
+
+<jsp:forward page="C.jsp"></jsp:forward>
+
+
 </body>
 </html>
