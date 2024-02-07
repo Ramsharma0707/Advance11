@@ -75,6 +75,7 @@ public class UserModel {
 		}
 	}
 		if (pageSize > 0) {
+			
 			pageNo = (pageNo - 1) * pageSize;
 			sql.append(" limit " + pageNo + ", " + pageSize);
 		}
