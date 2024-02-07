@@ -85,6 +85,7 @@ public class UserModel {
 		ResultSet rs = ps.executeQuery();
 
 		List list = new ArrayList();
+
 		while (rs.next()) {
 			bean = new UserBean();
 			bean.setId(rs.getInt(1));
