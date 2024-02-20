@@ -3,11 +3,13 @@
 <body>
 	<jsp:useBean id="bean" class="in.co.rays.bean.UserBean" scope="request"></jsp:useBean>
 	<%
+		List list = (List) request.getAttribute("list");
+		Iterator it = list.iterator();
+
 		int pageNo = (int) request.getAttribute("pageNo");
 		int index = ((pageNo - 1) * 5) + 1;
-		List list = (List) request.getAttribute("list");
+
 		List nextList = (List) request.getAttribute("nextList");
-		Iterator it = list.iterator();
 	%>
 	<%@ include file="Header.jsp"%>
 	<form action="UserListCtl.do" method="post">
@@ -58,7 +60,7 @@
 					<%=(nextList.size() != 0) ? "" : "disabled"%>></td>
 			</tr>
 		</table>
-		<input type="hidden" name="pageNo" value="<%=pageNo%>">
+		 <input type="hidden" name="pageNo" value="<%=pageNo%>"> 
 
 	</form>
 

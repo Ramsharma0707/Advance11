@@ -46,9 +46,9 @@
 
 		if (op != null) {
 	%>
-	<%=bean.getFirst_name()%>
-	<%=bean.getLast_name()%>
-	<%=bean.getLogin_id()%>
+	<%=bean.getFirstName()%>
+	<%=bean.getLasName()%>
+	<%=bean.getLoginId()%>
 	<%=bean.getPassword()%>
 	<%
 		}
